@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = 'BufWritePre',
+    -- event = 'BufWritePre', -- uncomment for format on save
     opts = require("configs.conform"),
   },
 
@@ -15,6 +15,28 @@ return {
         direction = "vertical",
         size = vim.o.columns * 0.5
       })
+    end,
+  },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("nvim-tree").setup(require "configs.nvim-tree")
+      -- Toggle nvim-tree with leader + e
+      vim.keymap.set('n', '<leader>e', function()
+        local api = require('nvim-tree.api')
+        local view = require('nvim-tree.view')
+        if view.is_visible() then
+          api.tree.close()
+        else
+          api.tree.open()
+        end
+      end, { desc = 'Toggle file explorer' })
     end,
   },
 
