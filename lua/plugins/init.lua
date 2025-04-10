@@ -31,6 +31,7 @@ return {
     build = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup(require "configs.treesitter")
+      require "configs.snakemake"
     end,
   },
 }
