@@ -19,10 +19,14 @@ local options = {
         ".git",
       },
     },
+    autopep8 = {
+      prepend_args = { "--max-line-length", "120" },
+      timeout_ms = 5000, -- set timeout to 5 seconds
+    },
   },
 
   format_on_save = {
-    timeout_ms = 500,
+    timeout_ms = 5000,
     lsp_fallback = true,
   },
 }
