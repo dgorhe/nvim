@@ -45,6 +45,7 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       require "configs.lspconfig"
+      require "configs.r"  -- Load R configuration
     end,
   },
 
@@ -54,6 +55,17 @@ return {
     config = function()
       require("nvim-treesitter.configs").setup(require "configs.treesitter")
       require "configs.snakemake"
+    end,
+  },
+
+  -- Add tabularize plugin
+  {
+    "godlygeek/tabular",
+    lazy = false,
+    config = function()
+      -- Add keybinding for tabularize
+      vim.keymap.set('n', '<leader>tt', ':Tabularize /', { desc = 'Tabularize with pattern' })
+      vim.keymap.set('v', '<leader>tt', ':Tabularize /', { desc = 'Tabularize selection with pattern' })
     end,
   },
 }

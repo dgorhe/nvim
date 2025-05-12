@@ -8,6 +8,10 @@ local options = {
       "autopep8",
       stop_after_first = true,
     },
+    r = {
+      "styler",
+      stop_after_first = true,
+    },
   },
 
   formatters = {
@@ -30,6 +34,13 @@ local options = {
         "--ignore", "E731",  -- Ignore lambda to def conversion
       },
       timeout_ms = 5000, -- set timeout to 5 seconds
+    },
+    styler = {
+      prepend_args = {
+        "--style=tidyverse",
+        "--indent_by=4",
+      },
+      timeout_ms = 5000,
     },
   },
 
