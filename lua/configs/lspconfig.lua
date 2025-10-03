@@ -25,21 +25,21 @@ lspconfig.pylsp.setup {
       plugins = {
         autopep8 = {
           enabled = true,
-          args = { "--max-line-length=120" }
+          args = { "--max-line-length=120" },
         },
         flake8 = {
           enabled = true,
-          maxLineLength = 120
+          maxLineLength = 120,
         },
         pycodestyle = {
           enabled = true,
-          maxLineLength = 120
+          maxLineLength = 120,
         },
         pylsp_mypy = { enabled = true },
         pylsp_rope = { enabled = true },
         pyflakes = { enabled = true },
         pylint = { enabled = false },
-      }
-    }
-  }
+      },
+    },
+  },
 }

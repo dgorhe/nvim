@@ -30,11 +30,12 @@ local options = {
 }
 
 -- Add filetype detection for Snakefiles
-vim.filetype.add({
+vim.filetype.add {
   pattern = {
-    ['.*Snakefile'] = 'snakemake',
-    ['.*%.smk'] = 'snakemake',
-  }
-})
+    [".*Snakefile"] = "snakemake",
+    [".*%.smk"] = "snakemake",
+  },
+}
 
-return options 
+return options
+

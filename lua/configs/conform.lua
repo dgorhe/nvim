@@ -12,8 +12,9 @@ local options = {
 
   formatters = {
     black = {
-      prepend_args = { 
-        "--line-length", "120",
+      prepend_args = {
+        "--line-length",
+        "120",
         "--skip-string-normalization",
         "--skip-magic-trailing-comma",
         "--preview",
@@ -25,9 +26,11 @@ local options = {
       },
     },
     autopep8 = {
-      prepend_args = { 
-        "--max-line-length", "120",
-        "--ignore", "E731",  -- Ignore lambda to def conversion
+      prepend_args = {
+        "--max-line-length",
+        "120",
+        "--ignore",
+        "E731", -- Ignore lambda to def conversion
       },
       timeout_ms = 5000, -- set timeout to 5 seconds
     },

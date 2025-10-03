@@ -2,7 +2,7 @@ return {
   {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
-    opts = require("configs.conform"),
+    opts = require "configs.conform",
   },
 
   {
@@ -10,11 +10,11 @@ return {
     version = "*",
     lazy = false,
     config = function()
-      require("toggleterm").setup({
+      require("toggleterm").setup {
         open_mapping = [[<C-\>]],
         direction = "vertical",
-        size = vim.o.columns * 0.5
-      })
+        size = vim.o.columns * 0.5,
+      }
     end,
   },
 
@@ -28,15 +28,15 @@ return {
     config = function()
       require("nvim-tree").setup(require "configs.nvim-tree")
       -- Toggle nvim-tree with leader + e
-      vim.keymap.set('n', '<leader>e', function()
-        local api = require('nvim-tree.api')
-        local view = require('nvim-tree.view')
+      vim.keymap.set("n", "<leader>e", function()
+        local api = require "nvim-tree.api"
+        local view = require "nvim-tree.view"
         if view.is_visible() then
           api.tree.close()
         else
           api.tree.open()
         end
-      end, { desc = 'Toggle file explorer' })
+      end, { desc = "Toggle file explorer" })
     end,
   },
 
@@ -63,8 +63,8 @@ return {
     lazy = false,
     config = function()
       -- Add keybinding for tabularize
-      vim.keymap.set('n', '<leader>tt', ':Tabularize /', { desc = 'Tabularize with pattern' })
-      vim.keymap.set('v', '<leader>tt', ':Tabularize /', { desc = 'Tabularize selection with pattern' })
+      vim.keymap.set("n", "<leader>tt", ":Tabularize /", { desc = "Tabularize with pattern" })
+      vim.keymap.set("v", "<leader>tt", ":Tabularize /", { desc = "Tabularize selection with pattern" })
     end,
   },
 }
