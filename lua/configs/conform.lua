@@ -8,6 +8,10 @@ local options = {
       "autopep8",
       stop_after_first = true,
     },
+    snakemake = {
+      "snakefmt",
+      stop_after_first = true,
+    },
   },
 
   formatters = {
@@ -31,6 +35,13 @@ local options = {
         "120",
         "--ignore",
         "E731", -- Ignore lambda to def conversion
+      },
+      timeout_ms = 5000, -- set timeout to 5 seconds
+    },
+    snakefmt = {
+      prepend_args = {
+        "--line-length",
+        "120",
       },
       timeout_ms = 5000, -- set timeout to 5 seconds
     },
