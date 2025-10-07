@@ -12,6 +12,14 @@ local options = {
       "snakefmt",
       stop_after_first = true,
     },
+    bash = {
+      "shfmt",
+      stop_after_first = true,
+    },
+    sh = {
+      "shfmt",
+      stop_after_first = true,
+    },
   },
 
   formatters = {
@@ -44,6 +52,10 @@ local options = {
         "120",
       },
       timeout_ms = 5000, -- set timeout to 5 seconds
+    },
+    shfmt = {
+      command = "shfmt",
+      args = { "-i", "4", "-bn", "-ci", "-sr", "-filename", "$FILENAME" },
     },
   },
 
